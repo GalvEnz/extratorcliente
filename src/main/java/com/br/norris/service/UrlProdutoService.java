@@ -23,8 +23,17 @@ public class UrlProdutoService {
             ).get();
 
             Elements urls = sitemap.select("loc");
+            System.out.println("TOTAL DE URLS ENCONTRADAS: " + urls.size());
+
+            int contador = 0;
 
             for (var loc : urls) {
+
+                if (contador >= 10) {
+                    break;
+                }
+
+                contador++;
 
                 String url = loc.text();
 
@@ -37,6 +46,7 @@ public class UrlProdutoService {
                             .select("span[itemprop=sku]")
                             .text()
                             .trim();
+                    System.out.println("SKU DO SITE: " + sku);
 
                     if (sku.isEmpty()) {
                         continue;

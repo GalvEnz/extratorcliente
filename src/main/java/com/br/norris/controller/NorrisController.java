@@ -45,7 +45,7 @@ public class NorrisController {
 
         String state = UUID.randomUUID().toString();
 
-        String url = "https://www.bling.com.br/Api/v3/oauth/authorize" +
+        String url = "https://api.bling.com.br/Api/v3/oauth/authorize" +
                 "?response_type=code" +
                 "&client_id=" + clientId +
                 "&redirect_uri=" + redirectUri +

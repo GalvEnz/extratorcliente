@@ -34,7 +34,7 @@ public class BlingTokenService {
 
     public void generateToken(String code) {
 
-        String url = "https://www.bling.com.br/Api/v3/oauth/token";
+        String url = "https://api.bling.com.br/Api/v3/oauth/token";
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
@@ -66,7 +66,7 @@ public class BlingTokenService {
 
     private void refreshToken(BlingToken token) {
 
-        String url = "https://www.bling.com.br/Api/v3/oauth/token";
+        String url = "https://api.bling.com.br/Api/v3/oauth/token";
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);

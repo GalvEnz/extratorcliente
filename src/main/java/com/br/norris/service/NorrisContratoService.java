@@ -30,7 +30,7 @@ import java.util.Map;
 public class NorrisContratoService {
     @Autowired
     private UrlProdutoService urlProdutoService;
-    private static final String BASE_URL = "https://www.bling.com.br/Api/v3";
+    private static final String BASE_URL = "https://api.bling.com.br/Api/v3";
     private static final int LIMITE = 100;
     @Autowired
     private ProdutoRepository repositoryProduto;
@@ -111,7 +111,7 @@ public class NorrisContratoService {
 
     public List<ProdutoDTO> buscarProdutos(String accessToken) {
 
-        String urlBase = "https://www.bling.com.br/Api/v3/produtos";
+        String urlBase = "https://api.bling.com.br/Api/v3/produtos";
 
         HttpHeaders headers = new HttpHeaders();
         headers.setBearerAuth(accessToken);
@@ -199,7 +199,7 @@ public class NorrisContratoService {
         String token = tokenService.getValidToken();
         int limite = 100;
 
-        String url = "https://www.bling.com.br/Api/v3/contatos?pagina=1&limite=" + limite;
+        String url = "https://api.bling.com.br/Api/v3/contatos?pagina=1&limite=" + limite;
 
         HttpHeaders headers = new HttpHeaders();
         headers.setBearerAuth(token);
@@ -305,7 +305,7 @@ public class NorrisContratoService {
 
     public String gerarPrimeiroToken(String code) {
 
-        String url = "https://www.bling.com.br/Api/v3/oauth/token";
+        String url = "https://api.bling.com.br/Api/v3/oauth/token";
 
         HttpHeaders headers = new HttpHeaders();
 
