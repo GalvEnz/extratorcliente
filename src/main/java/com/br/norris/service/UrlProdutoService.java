@@ -20,7 +20,11 @@ public class UrlProdutoService {
 
             Document sitemap = Jsoup.connect(
                     "https://www.norrisimports.com.br/sitemap/product-1.xml"
-            ).get();
+
+            ).userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0 Safari/537.36")
+            .ignoreContentType(true)
+            .timeout(30000)
+            .get();
 
             Elements urls = sitemap.select("loc");
             System.out.println("TOTAL DE URLS ENCONTRADAS: " + urls.size());
@@ -29,9 +33,11 @@ public class UrlProdutoService {
 
             for (var loc : urls) {
 
+/*
                 if (contador >= 10) {
                     break;
                 }
+*/
 
                 contador++;
 
@@ -40,7 +46,11 @@ public class UrlProdutoService {
                 try {
 
                     Document produtoDoc =
-                            Jsoup.connect(url).get();
+                            Jsoup.connect(url)
+                                    .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0 Safari/537.36")
+                                    .ignoreContentType(true)
+                                    .timeout(30000)
+                                    .get();
 
                     String sku = produtoDoc
                             .select("span[itemprop=sku]")
