@@ -30,4 +30,6 @@ public class ProdutoDTO {
     private String descricaoCurta;
 
     private String imagemURL;
+
+    private String urlProduto;
 }

@@ -67,6 +67,7 @@ public class NorrisContratoService {
                     null,
                     null,
                     null,
+                    null,
                     "Produto não encontrado"
             );
         }
@@ -80,11 +81,13 @@ public class NorrisContratoService {
                 produto.getPreco(),
                 produto.getEstoque(),
                 produto.getImagemUrl(),
+                produto.getUrlProduto(),
                 String.format(
-                        "%s custa R$ %.2f e possui %d unidades em estoque.",
+                        "%s custa R$ %.2f e possui %d unidades em estoque. Acessível em %s",
                         produto.getNome(),
                         produto.getPreco(),
-                        produto.getEstoque()
+                        produto.getEstoque(),
+                        produto.getUrlProduto()
                 )
         );
     }
@@ -355,6 +358,7 @@ public class NorrisContratoService {
             produto.setNome(dto.getNome());
             produto.setCodigo(dto.getCodigo());
             produto.setPreco(dto.getPreco());
+            produto.setUrlProduto(dto.getUrlProduto());
 
             if(dto.getEstoque() != null) {
                 produto.setEstoque(

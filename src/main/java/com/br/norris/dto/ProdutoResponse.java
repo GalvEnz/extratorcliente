@@ -23,5 +23,7 @@ public class ProdutoResponse {
 
     private String imagemUrl;
 
+    private String urlProduto;
+
     private String resposta;
 }
